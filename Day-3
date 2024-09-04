@@ -1,0 +1,20 @@
+Create a Docker container for webserver: 
+1) Create an VM instance (make sure all traffic is selected in security groups if working on AWS console) 
+2) Install docker as mentioned in day-2 file
+3) Pull a webserver IMAGE in docker : docker pull nginx
+4) Now to create a container in webserver we need to add -d (detach in the command) : docker run -it -d --name container_name Image_name
+**whenever we create an image for application server, websever, web-image we need to use -d (detatch) in the command**
+5) Here a container will be created but we dont enter the container because we used detatch(-d) in the command. 
+6) Every container has a source-code, to check this we can use command: docker inspect container_name
+7) After inspecting, we can check for the IP address, which will give us the source code of the default page of the webserver with command: curl ip_address
+Here curl = check URL
+8) But we will not be able to access the IP Address from browser. 
+9) We will create a container again with ports : docker run -it -d --name container_name -p 9090:80 image_name
+** Lets understand the ports used in command : -p 9090:80
+[Here 9090 : hostport --> used to access the application which is running inside the container. 
+ 80 : container port --> it depends on the image we are attaching to the container]
+** To know the hostport of the webserver you are accessing go to google and search for "Instance PUBLICIP:HOSTPORT" **
+10) docker exec helps us to perform commands inside the container without entering the container with command
+11) If we want to create a folder in the container : docker exec container_name mkdir folder_name
+12) If we want to check if the container is created : : docker exec container_name ls
+13) If we want to enter the container : docker exec -it container_name /bin/bash
