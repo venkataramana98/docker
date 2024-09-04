@@ -56,7 +56,7 @@ To start the container: docker start container_name
 To stop the container: docker stop container_name
 To stop the container immediately: docker kill container_name
 To stop all the containers at a time: docker stop $(docker ps)
-To stop all the containers at a time: docker start $(docker ps -a)
+To start all the containers at a time: docker start $(docker ps -a)
 
 To exit a container leaving the application running : "ctrl" + "p" + "q"
 
