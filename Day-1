@@ -1,0 +1,39 @@
+Docker: 
+Generally when we want to deploy software, we have 2 types of architectures. 
+1) monolithic : We have N number of services in an application, we run every service on a single server
+2) micro-service: If there are N number of services and we have independent server for each service
+
+Microservices is best as we can just turn down the service which is not working properly. 
+But the expense to maintain each server is more. 
+
+So the concept of virtual machine arises: 
+First we need to know about virtual machine: 
+A system which is installed inside our physical system to operate with a seperate Operating System. 
+But this has some disadvantages as the consumption resources of virtual machine will decrease the performance of the main system. 
+
+To rectify this, we will use docker:
+We create containers in docker, containers also work as virtual machine which doesn't have any operating system. 
+We will run applications in Docker with the help of IMAGES.
+
+Containarization:
+When a developer writes a code, we will convert the code into a WAR file which contains the code for the application. 
+So we will pack the WAR file(application) and add all its dependencies to create an IMAGE. This process of packing is called containarization. 
+Here as we pack all dependencies, we need not to install the dependencies individually again. 
+
+ABOUT DOCKER: 
+Docker is an open source platform. 
+It is used to create, deploy and run applications. 
+Docker is written in GO language. 
+Docker uses containers on host operating system to run operations. 
+We can install Docker on any operating system, but docker engine runs on linux commands. 
+Before many users face problems of the code running in developer system and not on the user system. 
+Docker rectifies this issue as it will also package the dependencies along with the application so the user will need not to install the dependencies again. 
+Docker was released on March 2013 and developed by Solomon Hykes and Sebastian Pahl. 
+The size of the files will reduce once we send the file into the container (It will not delete any data but compress it)
+
+
+Docker has 4 parts: 
+Docker client: It is the place where we will perform the commands. 
+Docker Host: The system where you install the docker. 
+Docker Deamon: It has 4 components: 1) Containers 2) Images 3) Volumes 4)Networks
+Docker Registry: As we know docker is used to create images and dockerHUB/Registry is used to store the images. 
