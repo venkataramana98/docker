@@ -9,9 +9,9 @@ Create a Docker container for webserver:
 7) After inspecting, we can check for the IP address, which will give us the source code of the default page of the webserver with command: curl ip_address
 Here curl = check URL
 8) But we will not be able to access the IP Address from browser. 
-9) We will create a container again with ports : docker run -it -d --name container_name -p 9090:80 image_name
-** Lets understand the ports used in command : -p 9090:80
-[Here 9090 : hostport --> used to access the application which is running inside the container. 
+9) We will create a container again with ports : docker run -it -d --name container_name -p 443:80 image_name
+** Lets understand the ports used in command : -p 443:80
+[Here 443 : hostport --> used to access the application which is running inside the container. 
  80 : container port --> it depends on the image we are attaching to the container]
 ** To access the webserver you are accessing go to google and search for "Instance PUBLICIP:HOSTPORT" **
 10) docker exec helps us to perform commands inside the container without entering the container with command
