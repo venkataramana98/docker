@@ -13,7 +13,7 @@ Here curl = check URL
 ** Lets understand the ports used in command : -p 9090:80
 [Here 9090 : hostport --> used to access the application which is running inside the container. 
  80 : container port --> it depends on the image we are attaching to the container]
-** To know the hostport of the webserver you are accessing go to google and search for "Instance PUBLICIP:HOSTPORT" **
+** To access the webserver you are accessing go to google and search for "Instance PUBLICIP:HOSTPORT" **
 10) docker exec helps us to perform commands inside the container without entering the container with command
 11) If we want to create a folder in the container : docker exec container_name mkdir folder_name
 12) If we want to check if the container is created : : docker exec container_name ls
