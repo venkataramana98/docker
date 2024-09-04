@@ -1,0 +1,66 @@
+Points to be followed: 
+1) You cant use docker directly, you need to start/restart first (Observe the docker version before and after restart)
+2) You need a base image for creating a container. 
+3) You cant enter directly to container, you need to start first. 
+4) If you run an image, By default one container will create. 
+
+Installation steps using the apt repository (Debian : Linux 11): 
+
+Run the following command to uninstall all conflicting packages:
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+Before you install Docker Engine for the first time on a new host machine, you need to set up the Docker apt repository. Afterward, you can install and update Docker from the repository.
+1) Set up Docker's apt repository.
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+2) Install the Docker packages. 
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+3) Verify that the installation is successful by running the hello-world image:
+sudo docker run hello-world
+(This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits.
+You have now successfully installed and started Docker Engine.)
+
+Docker status can be checked with : systemctl status docker
+To check version of docker: docker version
+If the system connect with docker client and not connecting to docker daemon use: systemctl start docker
+Information of the docker: docker info
+
+To see the list of images: docker images
+To see the list of containers: docker ps -a 
+"ps : process status"
+To see the list of running containers only: docker ps
+To see the list of exited containers only: docker ps -f "status=exited"
+
+To create a container we need a command: docker run -it --name container_name image_name
+-it = Interactive Terminal (it will create shell inside the container which is used to perform commands or execute programmes). 
+--name container_name: The name we give to the container
+image_name: the image we have taken
+
+To exit a container: exit
+To enter a container: docker attach container_name
+If you get the error : You cannot attach to a stopped container, start it first
+To start the container: docker start container_name
+To stop the container: docker stop container_name
+To stop the container immediately: docker kill container_name
+To stop all the containers at a time: docker stop $(docker ps)
+To stop all the containers at a time: docker start $(docker ps -a)
+
+To exit a container leaving the application running : "ctrl" + "p" + "q"
+
+To delete a container: docker rm container_name
+To delete all the exited containers: docker containers rm $(docker container ls -a)
+
+List of latest 2 containers: docker ps -n 2
