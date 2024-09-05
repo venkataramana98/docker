@@ -38,6 +38,8 @@ To check version of docker: docker version
 If the system connect with docker client and not connecting to docker daemon use: systemctl start docker
 Information of the docker: docker info
 
+**if your file is struck here, check for the file "If your file is struck", you can run few commands to rectify the issue**
+
 To see the list of images: docker images
 To see the list of containers: docker ps -a 
 "ps : process status"
