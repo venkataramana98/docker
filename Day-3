@@ -24,5 +24,6 @@ HOW TO CREATE A IMAGE FROM CONTAINER AND REPLICATE THE DATA FROM THAT CONTAINER 
 Lets create a container with image ubuntu with command: docker run -it --name Container_name ubuntu
 Now lets create few files in the container with command: touch file{1..5}
 Now, lets assume that the application is running in the files created. 
-Now lets create a new image with the container with command: docker commit container-name image-name (here image name is new image which you want to create)
-Now we can create N number of containers from the new image, we will get all the files from the image to all the containers. 
+Now lets create a new image with the container with command: docker commit container-name new-image-name (here image name is new image which you want to create)
+Now we can create N number of containers from the new image, we will get all the files from the image to all the containers: 
+docker run -it --name container_name new_image-name
