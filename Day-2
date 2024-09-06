@@ -64,5 +64,7 @@ To exit a container leaving the application running : "ctrl" + "p" + "q"
 
 To delete a container: docker rm container_name
 To delete all the exited containers: docker containers rm $(docker container ls -a)
+To delete an IMAGE : docker rmi image_name
+(you cannot delete images if there are any containers running on that image)
 
 List of latest 2 containers: docker ps -n 2
