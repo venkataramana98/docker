@@ -1,0 +1,7 @@
+Difference between docker pull and docker run: 
+When we use docker pull, the image will be downloaded from the dockerhub irrespective of the presence of image in local. This will not create a container. 
+When we use docker run, the server will check for the image in local, if it couldnt find, it will get it from central registry and create a container. 
+
+To know the full information of container: docker inspect container_name
+To know the full information of IMAGE: docker image inspect image_name
+
