@@ -5,3 +5,4 @@ When we use docker run, the server will check for the image in local, if it coul
 To know the full information of container: docker inspect container_name
 To know the full information of IMAGE: docker image inspect image_name
 
+how are you today?
