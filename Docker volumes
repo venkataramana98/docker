@@ -1,0 +1,10 @@
+Docker volumes : Are used to store the data inside a container and top replicate that data to any other container. 
+Points to remember: 
+1) When we create a container, then volume will be created. 
+2) Volume is simply a directory inside our container. 
+3) first, we have to declare the directory volume and then share colume. 
+
+
+
+
+To exit a container: ctrl + p + q
