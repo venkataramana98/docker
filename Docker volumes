@@ -6,5 +6,5 @@ Points to remember:
 
 
 
-
+Command to create a container: docker run -it --name container_name  -v path_of_volume  image_name
 To exit a container: ctrl + p + q
