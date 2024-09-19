@@ -5,6 +5,13 @@ Points to remember:
 3) first, we have to declare the directory volume and then share colume. 
 
 
+To check list of volumes: docker volume ls
+To delete volume: docker volume rm volume_name
+(When a volume is attached to a container, it cannot be deleted)
+To delete all the volumes at a time: docker volume prune
+To create a volume of our own: docker volume create Volume_name
+To inspect a volume: docker volume inspect volume_name
+
 Command to create a container with volume: docker run -it --name container_name  -v path_of_volume  image_name
 To exit a container: ctrl + p + q
 Command to share valume of a previous container (container to container):
@@ -16,14 +23,6 @@ To map host to container:
 3) Now we  need to create a container with volume in host using command: 
 docker run -it --name container_name -v path_of_folder:new_volume_path --privileged=true image_name
 alternative command for above: docker run -it --name container_name -v $(pwd):new_volume_path --privileged=true image_name
-
-
-To check list of volumes: docker volume ls
-To delete volume: docker volume rm volume_name
-(When a volume is attached to a container, it cannot be deleted)
-To delete all the volumes at a time: docker volume prune
-To create a volume of our own: docker volume create Volume_name
-To inspect a volume: docker volume inspect volume_name
 
 To mount an existing volume to newly created container: 
 1) First create an volume using command: docker volume create volume_name
