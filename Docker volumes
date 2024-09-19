@@ -5,7 +5,34 @@ Points to remember:
 3) first, we have to declare the directory volume and then share colume. 
 
 
-
-Command to create a container: docker run -it --name container_name  -v path_of_volume  image_name
+Command to create a container with volume: docker run -it --name container_name  -v path_of_volume  image_name
 To exit a container: ctrl + p + q
-Command to share valume of a container: docker run -it --name container_name  --privileged=true  --volumes-from previous_container_name  image_name
+Command to share valume of a previous container (container to container):
+docker run -it --name container_name  --privileged=true  --volumes-from previous_container_name  image_name
+
+To map host to container: 
+1) first we need to create a folder in host
+2) then we need to check for the path of the folder with command: pwd
+3) Now we  need to create a container with volume in host using command: 
+docker run -it --name container_name -v path_of_folder:new_volume_path --privileged=true image_name
+alternative command for above: docker run -it --name container_name -v $(pwd):new_volume_path --privileged=true image_name
+
+
+To check list of volumes: docker volume ls
+To delete volume: docker volume rm volume_name
+(When a volume is attached to a container, it cannot be deleted)
+To delete all the volumes at a time: docker volume prune
+To create a volume of our own: docker volume create Volume_name
+To inspect a volume: docker volume inspect volume_name
+
+To mount an existing volume to newly created container: 
+1) First create an volume using command: docker volume create volume_name
+2) to add data in the volume, we need to go to path: cd /var/lib/docker/
+3) Here we will find a folder with name volumes, enter volumes with command: cd volumes/
+4) Here we will find a folder with name our new volume_name, enter it with command: cd volume_name
+5) Here we will find _data, enter it with command: cd _data/
+5) Here we need to create the files: touch file{1..5}
+6) Now go to the home directory using: cd
+7) Create a container with the existing volume using: 
+docker run -it --name container_name --mount source=new_volume-name,destination=/new_volume-name image_name
+8) You can check for the files by entering the volumes in newly created container
