@@ -34,5 +34,5 @@ To mount an existing volume to newly created container:
 5) Here we need to create the files: touch file{1..5}
 6) Now go to the home directory using: cd
 7) Create a container with the existing volume using: 
-docker run -it --name container_name --mount source=new_volume-name,destination=/new_volume-name image_name
+docker run -it --name container_name --mount source=existing_volume-name,destination=/new_volume-name image_name
 8) You can check for the files by entering the volumes in newly created container
