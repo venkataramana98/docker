@@ -16,3 +16,7 @@ Step-4: PUSH THE IMAGE TO DOCKER HUB
 Step-5: TAG THE IMAGE (command - docker tag local-image:tagname new-repo:tagname
 Step-6: LOGIN INTO DOCKER HUB FROM SERVER (command - docker login)
 Step-7: PUSH THE IMAGE (command - docker push new-repo:tagname)
+
+
+Now to automate the process, we will use jenkins: 
+
