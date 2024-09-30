@@ -21,3 +21,9 @@ Step-7: PUSH THE IMAGE (command - docker push new-repo:tagname)
 
 Now to automate the process, we will use jenkins: 
 
+To install jenkins: 
+amazon-linux-extras install java-openjdk11 -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+yum install jenkins -y
+systemctl start jenkins
